@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+
+		<div id="content">
+			<h1>
+				Produtos <small>Novo produto</small>
+			</h1>
+			<h:form>
+				<h:panelGroup rendered="#{not empty produtoMB.produto.id}">
+					<div>
+						<h:outputLabel value="Código: " />
+						<h:inputText readonly="true" value="#{produtoMB.produto.id}" />
+					</div>
+				</h:panelGroup>
+				<h:inputHidden value="#{produtoMB.produto.id}" />
+				<div>
+					<h:outputLabel value="Codigo De Barras: " />
+					<h:inputText value="#{produtoMB.produto.codigoDeBarras}" />
+				</div>
+				<div>
+					<h:outputLabel value="Nome: " />
+					<h:inputText value="#{produtoMB.produto.nome}" />
+				</div>
+				<div>
+					<h:outputLabel value="Valor: " />
+					<h:inputText value="#{produtoMB.produto.valor}" />
+				</div>
+				<div>
+					<h:outputLabel value="Marca: " />
+					<h:inputText value="#{produtoMB.produto.marca}" />
+				</div>
+				<div>
+					<h:outputLabel value="Quantidade: " />
+					<h:inputText value="#{produtoMB.produto.quantidade}" />
+				</div>
+				<div>
+					<h:outputLabel value="Descricao: " />
+					<h:inputText value="#{produtoMB.produto.descricao}" />
+				</div>
+
+
+
+				<button type="reset">Restaurar</button>
+
+				<h:commandButton value="Salvar" action="#{produtoMB.salvar()}" />
+			</h:form>
+		</div>
+
+
+	</ui:define>
+</ui:composition>
+
+</html>

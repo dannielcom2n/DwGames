@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+
+		<div id="content">
+			<h1>
+				Clientes <small>Novo cliente</small>
+			</h1>
+			<h:form>
+				<h:panelGroup rendered="#{not empty clienteMB.cliente.id}">
+					<div>
+						<h:outputLabel value="Código: " />
+						<h:inputText readonly="true" value="#{clienteMB.cliente.id}" />
+					</div>
+				</h:panelGroup>
+				<h:inputHidden value="#{clienteMB.cliente.id}" />
+				<div>
+					<h:outputLabel value="Nome: " />
+					<h:inputText value="#{clienteMB.cliente.nome}" />
+				</div>
+				<div>
+					<h:outputLabel value="Telefone: " />
+					<h:inputText value="#{clienteMB.cliente.telefone}" />
+				</div>
+				<div>
+					<h:outputLabel value="Email: " />
+					<h:inputText value="#{clienteMB.cliente.email}" />
+				</div>
+				<div>
+					<h:outputLabel value="Senha: " />
+					<h:inputText value="#{clienteMB.cliente.senha}" />
+				</div>
+				<div>
+					<h:outputLabel value="Sexo: " />
+					<h:inputText value="#{clienteMB.cliente.sexo}" />
+				</div>
+
+
+
+
+				<button type="reset">Restaurar</button>
+
+				<h:commandButton value="Salvar" action="#{clienteMB.salvar()}" />
+			</h:form>
+		</div>
+
+
+	</ui:define>
+</ui:composition>
+
+</html>

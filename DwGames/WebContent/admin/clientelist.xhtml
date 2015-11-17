@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+		<h1>Produto</h1>
+
+		<h:link outcome="/admin/clienteform">Adicionar</h:link>
+		<h:form>
+			<table class="table table-listrado">
+				<h:dataTable border="1" value="#{clienteMB.clientes}" var="clientes">
+					<h:column>
+						<f:facet name="header">ID</f:facet>
+						<h:outputText value="#{clientes.id}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{clientes.nome}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Telefone</f:facet>
+						<h:outputText value="#{clientes.telefone}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{clientes.email}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Sexo</f:facet>
+						<h:outputText value="#{clientes.sexo}" />
+					</h:column>
+
+
+					<h:column>
+						<f:facet name="header"></f:facet>
+						<h:commandLink value="Editar"
+							action="#{clienteMB.editar(clientes.id)}" />
+
+						<h:commandLink value="X"
+							action="#{clienteMB.excluir(clientes.id)}"
+							onclick="return confirm('Tem certeza que deseja excluir o produto &#34;#{clientes.nome}&#34;?')" />
+					</h:column>
+				</h:dataTable>
+			</table>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
