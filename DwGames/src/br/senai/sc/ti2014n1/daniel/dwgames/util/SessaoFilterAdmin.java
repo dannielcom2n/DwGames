@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.senai.sc.tii2014n1.pw4.daniel.dwgames.mb.SessaoMB;
 
-@WebFilter(urlPatterns = "/user/*")
-public class SessaoFilter implements Filter {
+@WebFilter(urlPatterns = "/adimin/*")
+public class SessaoFilterAdmin implements Filter {
 
 	@Override
 	public void destroy() {
@@ -31,7 +31,7 @@ public class SessaoFilter implements Filter {
 		SessaoMB sessaoMB = (SessaoMB) httpServletRequest.getSession()
 				.getAttribute("sessaoMB");
 
-		if (sessaoMB == null || !sessaoMB.estaLogado()) {
+		if (sessaoMB == null || !sessaoMB.estaLogadoAdimin()) {
 			HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
 			httpServletResponse.sendRedirect(httpServletRequest
 					.getContextPath().concat("/index.xhtml"));

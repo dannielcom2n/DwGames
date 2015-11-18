@@ -44,6 +44,10 @@ public class SessaoMB {
 	public Boolean estaLogado() {
 		return usuarioLogado != null;
 	}
+	
+	public Boolean estaLogadoAdimin() {
+		return usuarioLogado != null;
+	}
 
 	public String sair() {
 		usuarioLogado = null;
