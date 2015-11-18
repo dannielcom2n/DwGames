@@ -8,18 +8,31 @@
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
-
 		<h:panelGroup rendered="#{!sessaoMB.estaLogado()}">
-
-
-
-
 			<div id="telaCadastro">
 				<br></br> <br></br>
 				<div id="middle" class="without-left-column without-right-column"
 					style="min-height: 446px;">
 					<div class="check-out identification">
 						<div class="info">
+							<div class="component signup">
+								<div class="header"></div>
+								<div class="legend">
+									<span class="icon"></span>
+									<h4 class="title">Quero me Cadastrar</h4>
+								</div>
+								<div class="content1">
+									<form action="https://www.bigboygames.com.br/seguro/OAuth.asp"
+										method="post" class="validate">
+										<fieldset>
+											<div class="field-wrapper">
+												<div class="label-wrapper"></div>
+											</div>
+
+										</fieldset>
+									</form>
+								</div>
+							</div>
 
 							<div class="component signin last">
 								<div class="header"></div>
@@ -58,6 +71,7 @@
 
 			</div>
 		</h:panelGroup>
+
 	</ui:define>
 </ui:composition>
 </html>
