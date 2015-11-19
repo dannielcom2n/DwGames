@@ -4,6 +4,7 @@ public class User {
 	private long id;
 	private String email;
 	private String senha;
+	private boolean admin;
 
 	public long getId() {
 		return id;
@@ -27,6 +28,14 @@ public class User {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public boolean getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 }

@@ -29,6 +29,7 @@ public class UserDao extends Dao {
 		User user = new User();
 		user.setEmail(rs.getString("email"));
 		user.setSenha(rs.getString("senha"));
+		user.setAdmin(rs.getBoolean("admin"));
 
 		return user;
 
