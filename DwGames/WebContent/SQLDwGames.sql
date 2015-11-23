@@ -26,6 +26,7 @@ CREATE TABLE Cliente(
  
  CREATE TABLE User(
  id Int NOT NULL AUTO_INCREMENT,
+ nome VARCHAR(45),
  email VARCHAR(45),
  senha VARCHAR(45),
  admin boolean,
