@@ -5,8 +5,6 @@ body {
 	background-attachment: fixed;
 }
 
-
-
 /* div fundo branca*/
 #middle {
 	position: relative;
@@ -20,36 +18,28 @@ body {
 	-webkit-box-shadow: 0 0 5px 0 #AEAEAE;
 	box-shadow: 0 0 10px 0 #AEAEAE;
 }
+
 /* div cinza dentro do ja sou cadastrado*/
 .identification .content form {
 	background: #EDEDED;
 	padding: 25px;
-	height: 285px;
+	height: 300px;
+	width: 328px;
 	border-radius: 15px;
 }
-/* div cinza dentro do quero me cadastrar*/
-.identification .content1 {
-	background: #EDEDED;
-	padding: 25px;
-	height: 285px;
-	border-radius: 15px;
-}
-/* poicao da lentra dentro da div ja sou cadastrado*/
+
+/* poicao da letra dentro da div ja sou cadastrado*/
 .identification h4 {
 	margin-bottom: 20px
 }
 
-/* poicao da lentra dentro da div ja sou cadastrado*/
+/* poicao da letra dentro da div ja sou cadastrado*/
 .identification .info {
 	overflow: hidden
 }
 /* ja sou cadastrado*/
 .identification .info .signin {
-	float: left
-}
-/* quero me cadastrar*/
-.identification .info .signup {
-	float: right
+	padding-left: 300px;
 }
 
 .identification fieldset {
@@ -78,7 +68,7 @@ body {
 	margin-right: 0 !important
 }
 
-/* divs quero me cadastrar e cadastro*/
+/* divs quero me cadastrar bme cadastro*/
 .identification .title {
 	position: relative;
 	font-weight: bold;
@@ -96,3 +86,261 @@ body {
 	border-radius: 10px 10px 0 0;
 	*line-height: 34px;
 }
+#lojaVirtual{
+	float:left;
+	display: block;
+	color:black;
+	padding-left: 20px;
+	
+}
+
+#formasDePagamento{
+	float:left;
+	display: block;
+	color:black;
+	padding-left: 20px;
+	
+}
+
+#Compartilhe{
+	float:left;
+	display: block;
+	color:black;
+	padding-left: 20px;
+	
+}
+
+#ajusteCompartilhe{
+	height: 30px;
+}
+
+#nomedoSite{
+	float:right;
+	color:black;
+	display: block;
+}
+
+
+.botao img {
+	display: block;
+	float: left;
+	width:120px;
+	height:150px;
+	
+}
+
+#jogosEmDestaque{
+	padding-left: 25px;
+	display: block;
+}
+
+#jogosplataforma{
+	padding-left: 50px;
+	display: block;
+}
+
+#jogos1{
+	float: left;
+	display: block;
+	width:120px;
+	height:150px;
+	
+}
+
+#jogos2{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+#jogos3{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	padding-left: 20px;
+}
+
+#jogos4{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+#jogos5{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+#jogos6{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+#jogos7{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+#jogos8{
+	float: left;
+	display: block;
+	width:140px;
+	height:150px;
+	
+	padding-left: 20px;
+}
+
+
+strike{
+	color: gray;
+}
+
+ p{
+	background-color: #eaedf2;
+	border-top-style: double;
+	padding-top: 20px;
+}
+
+
+#categoriaPlataforma{
+	float: left;
+	background-color: white;
+	height:1470px;
+	display: block;
+	border-style: double;
+	border-radius:10px;
+	width: 180px;
+}
+
+#corpoDoSitePlataforma{
+	float:left;
+	background-color: white;
+	height:1470px;
+	display: block;
+	border-style: double;
+	width:958px;
+	border-radius:10px;
+}
+
+
+#topicoPlataforma{
+	color: white;
+	background-color: black;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#fundoAzul{
+	color: white;
+	background-color: blue;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#verdeClaro{
+	color: white;
+	background-color:#32CD32;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#verdeEscuro{
+	color: white;
+	background-color:green;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#fundoAzulClaro{
+	color: black;
+	background-color:#00FFFF;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#fundoVermelho{
+	color: black;
+	background-color:#FF0000;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+
+.botao a:hover { 
+float:left;
+color:#999;
+               }
+
+
+
+#conteudoSite {
+	width: 1138px;
+	background-color: green;
+}
+
+#titDestaques {
+	background: #373834;
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	margin: -10px auto 10px;
+	padding: 0 10px;
+	color: #FFF;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	position: relative;
+}
+
+#titLancamentos {
+	background: #373834;
+	width: 120px;
+	height: 25px;
+	line-height: 25px;
+	margin: -10px auto 10px;
+	padding: 0 10px;
+	color: #FFF;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	position: relative;
+	display: block;
+}
+
+
+
+
+#formulario {
+	float: right;
+}
+

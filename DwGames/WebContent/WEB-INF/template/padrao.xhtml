@@ -5,8 +5,6 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-
-
 <h:head>
 	<link href="css/estilo.css" rel="stylesheet" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +22,8 @@
 
 		<br></br> <img src="img/hardline.jpg" height="150px" width="1138px"></img>
 		<div class="menu">
-			<nav class="navbar navbar-inverse">
+			<nav class="navbar navbar-default"
+				style="background-color:black;border-color:black">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -43,6 +42,7 @@
 						<li><h:link outcome="/index">Inicio</h:link></li>
 						<li><h:link outcome="/login"
 								rendered="#{!sessaoMB.estaLogado()}">Login</h:link></li>
+						<li><h:link outcome="/Produtos">Produtos</h:link></li>
 					</ul>
 					<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
 						<h:form>
@@ -60,24 +60,18 @@
 							</ul>
 						</h:form>
 					</h:panelGroup>
-
-
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container-fluid --> </nav>
-
 		</div>
-
 		<div class="conteudo">
 			<ui:insert name="conteudo">
 				<h1>DWGames</h1>
 			</ui:insert>
-
 		</div>
 		<div class="rodape">&copy; Todos os direitos reservados &reg;</div>
 	</div>
-
 	<h:outputScript library="js" name="jquery.min.js" />
 	<h:outputScript library="bootstrap" name="js/bootstrap.min.js" />
 x'</h:body>
