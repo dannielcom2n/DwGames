@@ -19,16 +19,16 @@ CREATE TABLE Cliente(
     marca VARCHAR(45),
 	quantidade INT(10),
 	descricao VARCHAR(45),
-	
+	foto VARCHAR(45),
 	PRIMARY KEY(id)
 	
 	);
  
  CREATE TABLE User(
  id Int NOT NULL AUTO_INCREMENT,
- nome VARCHAR(45),
- email VARCHAR(45),
- senha VARCHAR(45),
+ nome VARCHAR(45)NOT NULL,
+ email VARCHAR(45)NOT NULL,
+ senha VARCHAR(45)NOT NULL,
  admin boolean,
  PRIMARY KEY(id)
  );

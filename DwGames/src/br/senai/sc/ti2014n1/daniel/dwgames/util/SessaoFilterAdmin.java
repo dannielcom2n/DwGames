@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.senai.sc.tii2014n1.pw4.daniel.dwgames.mb.SessaoMB;
 
-@WebFilter(urlPatterns = "/adimin/*")
+@WebFilter(urlPatterns = "/admin/*")
 public class SessaoFilterAdmin implements Filter {
 
 	@Override
@@ -42,6 +42,5 @@ public class SessaoFilterAdmin implements Filter {
 	}
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-	}
+	public void init(FilterConfig arg0) throws ServletException {}
 }

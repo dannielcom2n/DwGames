@@ -8,6 +8,16 @@ public class Produto {
 	private String marca;
 	private int quantidade;
 	private String descricao;
+	private String foto;
+	
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	public long getId() {
 		return id;
