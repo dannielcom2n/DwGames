@@ -10,7 +10,7 @@
 	<ui:define name="conteudo">
 		<h:panelGroup rendered="#{!sessaoMB.estaLogado()}">
 			<div id="telaCadastro">
-				
+
 				<div id="middle" class="without-left-column without-right-column"
 					style="min-height: 446px;">
 					<div class="check-out identification">
@@ -22,34 +22,34 @@
 									<h4 class="title">Já sou cadastrado</h4>
 								</div>
 								<div class="content">
-									<form action="">
-										<fieldset>
-											<div class="field-wrapper">
-												<h:form>
-													<div>
-														<label>E-mail:</label>
-														<h:inputText value="#{sessaoMB.usuarioForm.email}" />
-													</div>
-													<div>
-														<label>Senha:</label>
-														<h:inputSecret value="#{sessaoMB.usuarioForm.senha}" />
-													</div>
-													<h:commandButton action="#{sessaoMB.entrar()}"
-														value="Entrar" />
-												</h:form>
-											</div>
-										</fieldset>
-									</form>
+									<h:form>
+										<div class="form-group">
+											<label for="exampleInputEmail1">E-mail:</label>
+											<h:inputText value="#{sessaoMB.usuarioForm.email}"
+												class="form-control" />
+										</div>
+										<div>
+											<label>Senha:</label>
+											<h:inputSecret value="#{sessaoMB.usuarioForm.senha}"
+												class="form-control" />
+										</div>
+										<br></br>
+										<button type="reset" class=" btn btn-default "
+											style="background-color: DimGray;">Limpar</button>
+										<h:commandButton action="#{sessaoMB.entrar()}" value="Entrar"
+											class=" btn btn-default  "
+											style=" background-color: DimGray; " />
+
+									</h:form>
 								</div>
 							</div>
 						</div>
-						<a href="javascript:history.back(-1)" class="btn-alt btn-return"><b>«
-								Voltar</b></a>
 					</div>
 				</div>
 				<h:messages />
 			</div>
 		</h:panelGroup>
+
 	</ui:define>
 </ui:composition>
 </html>

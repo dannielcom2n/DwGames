@@ -8,53 +8,57 @@
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
-		<h1>Produto</h1>
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
 
-		<h:link outcome="/admin/produtoform">Adicionar</h:link>
-		<h:form>
-			<table class="table table-listrado">
-				<h:dataTable border="1" value="#{produtoMB.produtos}" var="produtos">
-					<h:column>
-						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{produtos.id}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Codigo De Barras</f:facet>
-						<h:outputText value="#{produtos.codigoDeBarras}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{produtos.nome}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Valor</f:facet>
-						<h:outputText value="#{produtos.valor}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Marca</f:facet>
-						<h:outputText value="#{produtos.marca}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Quantidade</f:facet>
-						<h:outputText value="#{produtos.quantidade}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Descrição</f:facet>
-						<h:outputText value="#{produtos.descricao}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header"></f:facet>
-						<h:commandLink value="Editar"
-							action="#{produtoMB.editar(produtos.id)}" />
+			<h1>Produto</h1>
 
-						<h:commandLink value="X"
-							action="#{produtoMB.excluir(produtos.id)}"
-							onclick="return confirm('Tem certeza que deseja excluir o produto &#34;#{produtos.codigoDeBarras}&#34;?')" />
-					</h:column>
-				</h:dataTable>
-			</table>
-		</h:form>
+			<h:link outcome="/produtoform">Adicionar</h:link>
+			<h:form>
+				<table class="table table-listrado">
+					<h:dataTable border="1" value="#{produtoMB.produtos}"
+						var="produtos">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{produtos.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Codigo De Barras</f:facet>
+							<h:outputText value="#{produtos.codigoDeBarras}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{produtos.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Valor</f:facet>
+							<h:outputText value="#{produtos.valor}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Marca</f:facet>
+							<h:outputText value="#{produtos.marca}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Quantidade</f:facet>
+							<h:outputText value="#{produtos.quantidade}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Descrição</f:facet>
+							<h:outputText value="#{produtos.descricao}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header"></f:facet>
+							<h:commandLink value="Editar"
+								action="#{produtoMB.editar(produtos.id)}" />
 
+							<h:commandLink value="X"
+								action="#{produtoMB.excluir(produtos.id)}"
+								onclick="return confirm('Tem certeza que deseja excluir o produto &#34;#{produtos.codigoDeBarras}&#34;?')" />
+						</h:column>
+					</h:dataTable>
+				</table>
+			</h:form>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>
