@@ -45,7 +45,7 @@ public class ClienteMB {
 		} catch (Exception e) {
 			return "";
 		}
-		return "clientelist";
+		return "/login";
 	}
 
 	public String excluir(String idParam) {
