@@ -4,7 +4,26 @@ body {
 		URL(http://gamehall.uol.com.br/v10/wp-content/uploads/2015/06/ak07.jpg);
 	background-attachment: fixed;
 }
-
+logo {
+	
+	background-image: url("#{resource['img1/hardline.jpg']}");
+	height:150px;
+	 width:1138px;
+	}
+rodape{
+	background-color: #400040;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: auto;
+	left: auto;
+	width: 1140px;
+	height: 200px;
+	position: relative;
+	border-style: double;
+	border-radius:20px;
+	display: block;
+}
 /* div fundo branca*/
 #middle {
 	position: relative;
@@ -39,7 +58,7 @@ body {
 }
 /* ja sou cadastrado*/
 .identification .info .signin {
-	padding-left: 300px;
+	padding-left: 315px;
 }
 
 .identification fieldset {
@@ -86,163 +105,149 @@ body {
 	border-radius: 10px 10px 0 0;
 	*line-height: 34px;
 }
-#lojaVirtual{
-	float:left;
+
+#lojaVirtual {
+	float: left;
 	display: block;
-	color:black;
+	color: black;
 	padding-left: 20px;
-	
 }
 
-#formasDePagamento{
-	float:left;
+#formasDePagamento {
+	float: left;
 	display: block;
-	color:black;
+	color: black;
 	padding-left: 20px;
-	
 }
 
-#Compartilhe{
-	float:left;
+#Compartilhe {
+	float: left;
 	display: block;
-	color:black;
+	color: black;
 	padding-left: 20px;
-	
 }
 
-#ajusteCompartilhe{
+#ajusteCompartilhe {
 	height: 30px;
 }
 
-#nomedoSite{
-	float:right;
-	color:black;
+#nomedoSite {
+	float: right;
+	color: black;
 	display: block;
 }
-
 
 .botao img {
 	display: block;
 	float: left;
-	width:120px;
-	height:150px;
-	
+	width: 120px;
+	height: 150px;
 }
 
-#jogosEmDestaque{
+#jogosEmDestaque {
 	padding-left: 25px;
 	display: block;
 }
 
-#jogosplataforma{
+#jogosplataforma {
 	padding-left: 50px;
 	display: block;
 }
 
-#jogos1{
+#jogos1 {
 	float: left;
 	display: block;
-	width:120px;
-	height:150px;
-	
+	width: 120px;
+	height: 150px;
 }
 
-#jogos2{
+#jogos2 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos3{
+#jogos3 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos4{
+#jogos4 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos5{
+#jogos5 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos6{
+#jogos6 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos7{
+#jogos7 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-#jogos8{
+#jogos8 {
 	float: left;
 	display: block;
-	width:140px;
-	height:150px;
-	
+	width: 140px;
+	height: 150px;
 	padding-left: 20px;
 }
 
-
-strike{
+strike {
 	color: gray;
 }
 
- p{
+p {
 	background-color: #eaedf2;
 	border-top-style: double;
 	padding-top: 20px;
 }
 
-
-#categoriaPlataforma{
+#categoriaPlataforma {
 	float: left;
 	background-color: white;
-	height:1470px;
+	height: 1470px;
 	display: block;
 	border-style: double;
-	border-radius:10px;
+	border-radius: 10px;
 	width: 180px;
 }
 
-#corpoDoSitePlataforma{
-	float:left;
+#corpoDoSitePlataforma {
+	float: left;
 	background-color: white;
-	height:1470px;
+	height: 1470px;
 	display: block;
 	border-style: double;
-	width:958px;
-	border-radius:10px;
+	width: 958px;
+	border-radius: 10px;
 }
 
-
-#topicoPlataforma{
+#topicoPlataforma {
 	color: white;
 	background-color: black;
 	border-radius: 5px;
@@ -250,7 +255,7 @@ strike{
 	padding-bottom: 5px;
 }
 
-#fundoAzul{
+#fundoAzul {
 	color: white;
 	background-color: blue;
 	border-radius: 5px;
@@ -258,46 +263,42 @@ strike{
 	padding-bottom: 5px;
 }
 
-#verdeClaro{
+#verdeClaro {
 	color: white;
-	background-color:#32CD32;
+	background-color: #32CD32;
 	border-radius: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#verdeEscuro{
+#verdeEscuro {
 	color: white;
-	background-color:green;
+	background-color: green;
 	border-radius: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#fundoAzulClaro{
+#fundoAzulClaro {
 	color: black;
-	background-color:#00FFFF;
+	background-color: #00FFFF;
 	border-radius: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#fundoVermelho{
+#fundoVermelho {
 	color: black;
-	background-color:#FF0000;
+	background-color: #FF0000;
 	border-radius: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	
 }
 
-
-.botao a:hover { 
-float:left;
-color:#999;
-               }
-
-
+.botao a:hover {
+	float: left;
+	color: #999;
+}
 
 #conteudoSite {
 	width: 1138px;
@@ -337,10 +338,6 @@ color:#999;
 	display: block;
 }
 
-
-
-
 #formulario {
 	float: right;
 }
-

@@ -5,58 +5,63 @@
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
 
-		<div id="content">
-			<h1>
-				Produtos <small>Novo produto</small>
-			</h1>
-			<h:form enctype="multipart/form-data" > 
-				<h:panelGroup rendered="#{not empty produtoMB.produto.id}">
+
+			<div id="content">
+				<h1>
+					Produtos <small>Novo produto</small>
+				</h1>
+				<h:form enctype="multipart/form-data" > 
+					<h:panelGroup rendered="#{not empty produtoMB.produto.id}">
+						<div>
+							<h:outputLabel value="Código: " />
+							<h:inputText readonly="true" value="#{produtoMB.produto.id}" />
+						</div>
+					</h:panelGroup>
+					<h:inputHidden value="#{produtoMB.produto.id}" />
+
 					<div>
-						<h:outputLabel value="Código: " />
-						<h:inputText readonly="true" value="#{produtoMB.produto.id}" />
+						<h:outputLabel value="Codigo De Barras: " />
+						<h:inputText value="#{produtoMB.produto.codigoDeBarras}" />
 					</div>
-				</h:panelGroup>
-				<h:inputHidden value="#{produtoMB.produto.id}" />
-				<div>
-					<h:outputLabel value="Codigo De Barras: " />
-					<h:inputText value="#{produtoMB.produto.codigoDeBarras}" />
-				</div>
-				<div>
-					<h:outputLabel value="Nome: " />
-					<h:inputText value="#{produtoMB.produto.nome}" />
-				</div>
-				<div>
-					<h:outputLabel value="Valor: " />
-					<h:inputText value="#{produtoMB.produto.valor}" />
-				</div>
-				<div>
-					<h:outputLabel value="Marca: " />
-					<h:inputText value="#{produtoMB.produto.marca}" />
-				</div>
-				<div>
-					<h:outputLabel value="Quantidade: " />
-					<h:inputText value="#{produtoMB.produto.quantidade}" />
-				</div>
-				<div>
-					<h:outputLabel value="Descricao: " />
-					<h:inputText value="#{produtoMB.produto.descricao}" />
-				</div>
-				<div>
-					<h:outputLabel value="Foto: " />
-					<h:inputFile value="#{produtoMB.foto}" />
-					<h:graphicImage styleClass="img-responsive" name="img/upload/#{produtoMB.produto.foto}" />
-					<h:imputHidden value="#{produtoMB.produto.foto}"/>
-				</div>
 
+					<div>
+						<h:outputLabel value="Nome: " />
+						<h:inputText value="#{produtoMB.produto.nome}" />
+					</div>
+					<div>
+						<h:outputLabel value="Valor: " />
+						<h:inputText value="#{produtoMB.produto.valor}" />
+					</div>
+					<div>
+						<h:outputLabel value="Marca: " />
+						<h:inputText value="#{produtoMB.produto.marca}" />
+					</div>
+					<div>
+						<h:outputLabel value="Quantidade: " />
+						<h:inputText value="#{produtoMB.produto.quantidade}" />
+					</div>
+					<div>
+						<h:outputLabel value="Descricao: " />
+						<h:inputText value="#{produtoMB.produto.descricao}" />
+					</div>
+					<div>
+						<h:outputLabel value="Foto: " />
+						<h:inputFile value="#{produtoMB.foto}" />
+						<h:graphicImage rendered="#{produtoMB.produto.foto}" styleClass="img-responsive"
+							name="img/upload/#{produtoMB.produto.foto}" />
+						<h:inputHidden value="#{produtoMB.produto.foto}" />
+					</div>
 
-				<button type="reset">Restaurar</button>
+					<button type="reset">Restaurar</button>
 
-				<h:commandButton value="Salvar" action="#{produtoMB.salvar()}" />
-			</h:form>
+					<h:commandButton value="Salvar" action="#{produtoMB.salvar()}" />
+				</h:form>
+			</div>
+
 		</div>
-
-
 	</ui:define>
 </ui:composition>
 

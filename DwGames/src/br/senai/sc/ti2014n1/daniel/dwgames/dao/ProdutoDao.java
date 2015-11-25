@@ -100,7 +100,7 @@ public class ProdutoDao extends Dao {
 		produto.setValor(rs.getDouble("valor"));
 		produto.setMarca(rs.getString("marca"));
 		produto.setQuantidade(rs.getInt("quantidade"));
-		produto.setMarca(rs.getString("descricao"));
+		produto.setDescricao(rs.getString("descricao"));
 		produto.setFoto(rs.getString("foto"));
 		produto.setId(rs.getLong("id"));
 		return produto;
