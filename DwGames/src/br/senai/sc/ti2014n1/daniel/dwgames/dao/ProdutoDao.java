@@ -10,8 +10,8 @@ import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Produto;
 
 public class ProdutoDao extends Dao {
 
-	private final String INSERT = "INSERT INTO produto (codigoDeBarras,nome,valor,marca,quantidade,descricao) VALUES (?,?,?,?,?,?)";
-	private final String UPDATE = "UPDATE produto SET codigoDeBarras = ?, nome = ?, valor = ?, marca = ?, quantidade = ?,descricao = ? WHERE id = ?";
+	private final String INSERT = "INSERT INTO produto (codigoDeBarras,nome,valor,marca,quantidade,descricao,foto) VALUES (?,?,?,?,?,?,?)";
+	private final String UPDATE = "UPDATE produto SET codigoDeBarras = ?, nome = ?, valor = ?, marca = ?, quantidade = ?,descricao = ?, foto = ? WHERE id = ?";
 	private final String DELETE = "DELETE FROM produto WHERE id = ?";
 	private final String SELECT = "SELECT * FROM produto";
 	private final String SELECT_ID = "SELECT * FROM produto WHERE id = ?";
@@ -34,7 +34,8 @@ public class ProdutoDao extends Dao {
 			ps.setString(4, produto.getMarca());
 			ps.setInt(5, produto.getQuantidade());
 			ps.setString(6, produto.getDescricao());
-
+			ps.setString(7, produto.getFoto());
+			
 			ps.executeUpdate();
 
 		} catch (Exception e) {
@@ -52,7 +53,8 @@ public class ProdutoDao extends Dao {
 			ps.setString(4, produto.getMarca());
 			ps.setInt(5, produto.getQuantidade());
 			ps.setString(6, produto.getDescricao());
-			ps.setLong(7, produto.getId());
+			ps.setString(7, produto.getFoto());
+			ps.setLong(8, produto.getId());
 
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -98,8 +100,8 @@ public class ProdutoDao extends Dao {
 		produto.setValor(rs.getDouble("valor"));
 		produto.setMarca(rs.getString("marca"));
 		produto.setQuantidade(rs.getInt("quantidade"));
-		produto.setMarca(rs.getString("descricao"));
-
+		produto.setDescricao(rs.getString("descricao"));
+		produto.setFoto(rs.getString("foto"));
 		produto.setId(rs.getLong("id"));
 		return produto;
 

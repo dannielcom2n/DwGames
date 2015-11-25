@@ -48,6 +48,12 @@
 							<h:outputText value="#{produtos.descricao}" />
 						</h:column>
 						<h:column>
+							<f:facet name="header">Foto</f:facet>
+							<h:graphicImage rendered="#{not empty produtos.foto}" styleClass="img-responsive"
+							name="img/upload/#{produtos.foto}" />
+						</h:column>
+						
+						<h:column>
 							<f:facet name="header"></f:facet>
 							<h:commandLink value="Editar"
 								action="#{produtoMB.editar(produtos.id)}" />

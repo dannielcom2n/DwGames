@@ -46,7 +46,7 @@ public class SessaoMB {
 	}
 	
 	public Boolean estaLogadoAdimin() {
-		return usuarioLogado != null;
+		return usuarioLogado != null && usuarioLogado.getAdmin();
 	}
 
 	public String sair() {

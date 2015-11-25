@@ -2,6 +2,7 @@ package br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio;
 
 public class User {
 	private long id;
+	private String nome;
 	private String email;
 	private String senha;
 	private boolean admin;
@@ -12,6 +13,14 @@ public class User {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
