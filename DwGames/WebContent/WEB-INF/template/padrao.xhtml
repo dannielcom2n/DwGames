@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<link href="css/estilo.css" rel="stylesheet" />
+	<link href="resources/cssSite/estilo.css" rel="stylesheet" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -49,6 +49,7 @@
 										rendered="#{!sessaoMB.estaLogado()}">Login</h:link></li>
 
 								<li><h:link outcome="/produtos">Produtos</h:link></li>
+								<li><h:link outcome="/clienteform">Cadastre-se</h:link></li>
 							</ul>
 							<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
 								<h:form>
