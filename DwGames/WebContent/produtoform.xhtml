@@ -50,8 +50,7 @@
 					<div>
 						<h:outputLabel value="Foto: " />
 						<h:inputFile value="#{produtoMB.foto}" />
-						<h:graphicImage rendered="#{produtoMB.produto.foto}" styleClass="img-responsive"
-							name="img/upload/#{produtoMB.produto.foto}" />
+						<h:graphicImage styleClass="img-responsive" name="#{initParam['upload_path']}#{produtoMB.produto.foto}" />
 						<h:inputHidden value="#{produtoMB.produto.foto}" />
 					</div>
 

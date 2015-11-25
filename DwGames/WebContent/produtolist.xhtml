@@ -50,7 +50,7 @@
 						<h:column>
 							<f:facet name="header">Foto</f:facet>
 							<h:graphicImage rendered="#{not empty produtos.foto}" styleClass="img-responsive"
-							name="img/upload/#{produtos.foto}" />
+							name="#{initParam['upload_path']}#{produtos.foto}" />
 						</h:column>
 						
 						<h:column>

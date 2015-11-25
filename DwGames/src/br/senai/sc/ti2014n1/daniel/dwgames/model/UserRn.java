@@ -30,6 +30,7 @@ public class UserRn {
 			throw new Exception("A senha é obrigatoria");
 
 		}
+		
 		dao.salvar(user);
 	}
 	
