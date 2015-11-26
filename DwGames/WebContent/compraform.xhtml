@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
+			<div id="content">
+				<h:form>
+					<h:panelGroup rendered="#{not empty compraMB.compra.id}">
+
+					</h:panelGroup>
+					<h:inputHidden value="#{compraMB.compra.id}" />
+					<div>
+						<h:outputLabel value="Quantidade: " />
+						<h:inputText value="#{compraMB.compra.quantidade}" />
+					</div>
+
+					<button type="reset">Limpar</button>
+
+					<h:commandButton value="Salvar" action="#{compraMB.salvar()}" />
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>

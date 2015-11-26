@@ -33,3 +33,9 @@ CREATE TABLE Cliente(
  PRIMARY KEY(id)
  );
 
+  CREATE TABLE Compra(
+ id Int NOT NULL AUTO_INCREMENT,
+ quantidade INT,
+ PRIMARY KEY(id)
+ );
+
