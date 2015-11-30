@@ -41,6 +41,7 @@ public class ClienteMB {
 
 	public String salvar() {
 		try {
+			cliente.user.admin = false;
 			rn.salvar(cliente);
 		} catch (Exception e) {
 			return "";

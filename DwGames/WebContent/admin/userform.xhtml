@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
+			<div id="content">
+				<h:form>
+					<h:panelGroup rendered="#{not empty userMB.user.id}">
+
+					</h:panelGroup>
+					<h:inputHidden value="#{userMB.user.id}" />
+					<div>
+						<h:outputLabel value="Nome: " />
+						<h:inputText value="#{userMB.user.nome}" />
+					</div>
+					<div>
+						<h:outputLabel value="Email: " />
+						<h:inputText value="#{userMB.user.email}" />
+					</div>
+					<div>
+						<h:outputLabel value="Senha: " />
+						<h:inputText value="#{userMB.user.senha}" />
+					</div>
+					<button type="reset">Restaurar</button>
+
+					<h:commandButton value="Salvar" action="#{userMB.salvar()}" />
+				</h:form>
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
+import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 
 public class ClienteDao extends Dao {
 
 	private final String SELECT_EMAIL = "SELECT * FROM user WHERE email = ?";
-	private final String INSERT = "INSERT INTO cliente (nome,telefone,email,senha,sexo) VALUES (?,?,?,?,?)";
-	private final String UPDATE = "UPDATE cliente SET nome = ?, telefone = ?, email = ?, senha = ?, sexo = ? WHERE id = ?";
+	private final String INSERT = "INSERT INTO cliente (nome,telefone,sexo) VALUES (?,?,?)";
+	private final String UPDATE = "UPDATE cliente SET nome = ?, telefone = ?, sexo = ? WHERE id = ?";
 	private final String DELETE = "DELETE FROM cliente WHERE id = ?";
 	private final String SELECT = "SELECT * FROM cliente";
 	private final String SELECT_ID = "SELECT * FROM cliente WHERE id = ?";
@@ -31,10 +32,8 @@ public class ClienteDao extends Dao {
 			PreparedStatement ps = getConnection().prepareStatement(INSERT);
 			ps.setString(1, cliente.getNome());
 			ps.setInt(2, cliente.getTelefone());
-			ps.setString(3, cliente.getEmail());
-			ps.setString(4, cliente.getSenha());
-			ps.setString(5, cliente.getSexo());
-
+			ps.setString(3, cliente.getSexo());
+			ps.setLong(4, cliente.getUser().getId());
 			ps.executeUpdate();
 
 		} catch (Exception e) {
@@ -48,10 +47,9 @@ public class ClienteDao extends Dao {
 			PreparedStatement ps = getConnection().prepareStatement(UPDATE);
 			ps.setString(1, cliente.getNome());
 			ps.setInt(2, cliente.getTelefone());
-			ps.setString(3, cliente.getEmail());
-			ps.setString(4, cliente.getSenha());
-			ps.setString(5, cliente.getSexo());
-			ps.setLong(6, cliente.getId());
+			ps.setString(3, cliente.getSexo());
+			ps.setLong(4, cliente.getUser().getId());
+			ps.setLong(5, cliente.getId());
 
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -80,8 +78,14 @@ public class ClienteDao extends Dao {
 			PreparedStatement ps = getConnection().prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+				Cliente cliente1 = new Cliente();
 				Cliente cliente = parseCliente(rs);
+				
+				ClienteDao clienteDao = DAOFactory.getClienteDao();
+				cliente1.setUser(clienteDao.buscarPorId(rs.getLong("id")));
+				
 				clientes.add(cliente);
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -91,11 +95,11 @@ public class ClienteDao extends Dao {
 	}
 
 	private Cliente parseCliente(ResultSet rs) throws SQLException {
+		User user = new User();
+		UserDao user = new UserDao(); 
 		Cliente cliente = new Cliente();
 		cliente.setNome(rs.getString("nome"));
 		cliente.setTelefone(rs.getInt("telefone"));
-		cliente.setEmail(rs.getString("email"));
-		cliente.setSenha(rs.getString("senha"));
 		cliente.setSexo(rs.getString("sexo"));
 		cliente.setId(rs.getLong("id"));
 		return cliente;

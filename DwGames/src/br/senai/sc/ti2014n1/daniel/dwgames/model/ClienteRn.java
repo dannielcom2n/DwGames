@@ -14,10 +14,11 @@ public class ClienteRn {
 	}
 
 	public void salvar(Cliente cliente) throws Exception {
+		
 		if (cliente.getNome().trim().isEmpty()) {
 			throw new Exception("O nome é obrigatorio");
-
 		}
+		
 		dao.salvar(cliente);
 	}
 

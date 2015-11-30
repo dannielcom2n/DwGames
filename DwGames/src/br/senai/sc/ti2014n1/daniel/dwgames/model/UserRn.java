@@ -1,5 +1,6 @@
 package br.senai.sc.ti2014n1.daniel.dwgames.model;
 
+import java.util.List;
 import br.senai.sc.ti2014n1.daniel.dwgames.dao.UserDao;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 
@@ -15,7 +16,17 @@ public class UserRn {
 	}
 
 	public void salvar(User user) throws Exception {
+		UserRn userRn = new UserRn();
+		
+		if (userRn.validar(user)) {
+			dao.salvar(user);
+		}
 
+		
+	}
+	
+	public boolean validar(User user)  throws Exception {
+		
 		if (user.getNome().trim().isEmpty()) {
 			throw new Exception("O nome é obrigatorio");
 
@@ -31,7 +42,12 @@ public class UserRn {
 
 		}
 		
-		dao.salvar(user);
+		return true;
+		
+	}
+	
+	public List<User> listar() {
+		return dao.listarTodos();
 	}
 	
 	public User buscarPorId(Long id) {
