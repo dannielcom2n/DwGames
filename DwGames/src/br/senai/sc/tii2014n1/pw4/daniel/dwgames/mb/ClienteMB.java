@@ -42,7 +42,7 @@ public class ClienteMB {
 	public String salvar() {
 		try {
 			rn.salvar(cliente);
-		} catch (Exception e) {
+		}	 catch (Exception e) {
 			return "";
 		}
 		return "/login";
@@ -62,7 +62,7 @@ public class ClienteMB {
 	public String editar(String idParam) {
 		Long id = Long.parseLong(idParam);
 		cliente = rn.buscarPorId(id);
-		return "clienteform";
+		return "/clienteform";
 	}
 
 }

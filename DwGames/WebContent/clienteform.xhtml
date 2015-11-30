@@ -11,7 +11,7 @@
 				<h:form>
 					<h:panelGroup rendered="#{not empty clienteMB.cliente.id}">
 
-					</h:panelGroup>
+					
 					<h:inputHidden value="#{clienteMB.cliente.id}" />
 					<div>
 						<h:outputLabel value="Nome: " />
@@ -27,7 +27,7 @@
 					</div>
 					<div>
 						<h:outputLabel value="Senha: " />
-						<h:inputText value="#{clienteMB.cliente.senha}" />
+						<h:inputSecret value="#{clienteMB.cliente.senha}" />
 					</div>
 					<div>
 						<h:outputLabel value="Sexo: " />
@@ -36,6 +36,7 @@
 					<button type="reset">Limpar</button>
 
 					<h:commandButton value="Salvar" action="#{clienteMB.salvar()}" />
+					</h:panelGroup>
 				</h:form>
 			</div>
 
