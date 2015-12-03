@@ -1,6 +1,8 @@
 package br.senai.sc.ti2014n1.daniel.dwgames.model;
 
+import java.sql.SQLException;
 import java.util.List;
+
 import br.senai.sc.ti2014n1.daniel.dwgames.dao.UserDao;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 
@@ -16,9 +18,8 @@ public class UserRn {
 	}
 
 	public void salvar(User user) throws Exception {
-		UserRn userRn = new UserRn();
 		
-		if (userRn.validar(user)) {
+		if (validar(user)) {
 			dao.salvar(user);
 		}
 
@@ -50,12 +51,13 @@ public class UserRn {
 		return dao.listarTodos();
 	}
 	
-	public User buscarPorId(Long id) {
+	public User buscarPorId(Long id) throws SQLException {
 		return dao.buscarPorId(id);
 	}
 
 	public void excluir(Long id) throws Exception {
 		dao.excluir(id);
 	}
+
 
 }

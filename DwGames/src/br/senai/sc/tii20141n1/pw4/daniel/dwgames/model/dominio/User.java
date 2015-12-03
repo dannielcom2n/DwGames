@@ -1,17 +1,20 @@
 package br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio;
 
-public class User {
-	private long id;
+import java.io.Serializable;
+
+public class User implements Serializable{
+	private static final long serialVersionUID = -2888395855507609855L; 
+	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
 	private boolean admin;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-
 import br.senai.sc.ti2014n1.daniel.dwgames.model.ClienteRn;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
+import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 
 @ManagedBean
 public class ClienteMB {
@@ -18,6 +18,7 @@ public class ClienteMB {
 	public void init() {
 		rn = new ClienteRn();
 		cliente = new Cliente();
+		cliente.setUser(new User());
 	}
 
 	public List<Cliente> getClientes() {
@@ -41,9 +42,10 @@ public class ClienteMB {
 
 	public String salvar() {
 		try {
-			cliente.user.admin = false;
+			cliente.getUser().setAdmin(false);
 			rn.salvar(cliente);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "";
 		}
 		return "/login";

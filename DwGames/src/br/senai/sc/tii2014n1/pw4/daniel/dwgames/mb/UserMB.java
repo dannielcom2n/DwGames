@@ -1,9 +1,11 @@
 package br.senai.sc.tii2014n1.pw4.daniel.dwgames.mb;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+
 import br.senai.sc.ti2014n1.daniel.dwgames.model.UserRn;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 
@@ -58,7 +60,7 @@ public class UserMB {
 		return "";
 	}
 
-	public String editar(String idParam) {
+	public String editar(String idParam) throws SQLException {
 		Long id = Long.parseLong(idParam);
 		user = rn.buscarPorId(id);
 		return "userform";

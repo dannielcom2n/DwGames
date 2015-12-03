@@ -8,17 +8,19 @@ import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
 public class ClienteRn {
 
 	private ClienteDao dao;
+	
+	UserRn userRn = new UserRn();
 
 	public ClienteRn() {
 		dao = new ClienteDao();
 	}
 
 	public void salvar(Cliente cliente) throws Exception {
-		
-		if (cliente.getNome().trim().isEmpty()) {
-			throw new Exception("O nome é obrigatorio");
+
+		if (userRn.validar(cliente.getUser())) {
+
 		}
-		
+
 		dao.salvar(cliente);
 	}
 
