@@ -74,6 +74,7 @@ public class UserDao extends Dao {
 	private User parseUser(ResultSet rs) throws SQLException {
 		User user = new User();
 		user.setId(rs.getLong("id"));
+		user.setNome(rs.getString("nome"));
 		user.setEmail(rs.getString("email"));
 		user.setSenha(rs.getString("senha"));
 		user.setAdmin(rs.getBoolean("admin"));
