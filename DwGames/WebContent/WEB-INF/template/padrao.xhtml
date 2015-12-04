@@ -12,15 +12,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 
 	<title><ui:insert name="titulo">DW Games</ui:insert></title>
-
 	<!-- 	<h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css" /> -->
 	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
 	<h:outputStylesheet library="css" name="padrao.css" />
+
 
 </h:head>
 <h:body>
 	<div class="conteudo">
 		<div class="container">
+
 			<br></br>
 			<div class="logo">
 				<img src="#{resource['imgLogo/hardline.jpg']}"
@@ -50,7 +51,7 @@
 
 								<li><h:link outcome="/produtos">Produtos</h:link></li>
 								<li><h:link outcome="/clienteform">Cadastre-se</h:link></li>
-								
+
 							</ul>
 							<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
 								<h:form>
@@ -74,6 +75,7 @@
 									</ul>
 								</h:form>
 							</h:panelGroup>
+
 						</div>
 						<!-- /.navbar-collapse -->
 					</div>

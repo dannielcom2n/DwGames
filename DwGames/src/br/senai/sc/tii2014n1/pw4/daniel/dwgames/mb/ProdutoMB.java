@@ -53,7 +53,7 @@ public class ProdutoMB {
 	public String salvar() {
 		try {
 			String nomeFoto = UploadImagemUtil.copiar(foto, produto.getFoto());
-			produto.setFoto(nomeFoto); 
+			produto.setFoto(nomeFoto);
 			rn.salvar(produto);
 		} catch (Exception e) {
 			return "";
@@ -66,7 +66,7 @@ public class ProdutoMB {
 		Produto produtoAntigo = rn.buscarPorId(id);
 		try {
 			rn.excluir(id);
-			UploadImagemUtil.remover(produtoAntigo.getFoto()); 
+			UploadImagemUtil.remover(produtoAntigo.getFoto());
 			produtos = null;
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -13,7 +13,7 @@
 				<h1>
 					Produtos <small>Novo produto</small>
 				</h1>
-				<h:form enctype="multipart/form-data" > 
+				<h:form enctype="multipart/form-data">
 					<h:panelGroup rendered="#{not empty produtoMB.produto.id}">
 						<div>
 							<h:outputLabel value="Código: " />
@@ -47,10 +47,14 @@
 						<h:outputLabel value="Descricao: " />
 						<h:inputText value="#{produtoMB.produto.descricao}" />
 					</div>
-					
+					<div>
 
+						<h:outputLabel value="foto" />
+						<h:inputFile value="#{produtoMB.foto}" />
+						<h:graphicImage styleClass="img-responsive"
+							name="#{initParam['upload_path']}#{produtoMB.produto.foto}" />
+					</div>
 					<button type="reset">Restaurar</button>
-
 					<h:commandButton value="Salvar" action="#{produtoMB.salvar()}" />
 				</h:form>
 			</div>
