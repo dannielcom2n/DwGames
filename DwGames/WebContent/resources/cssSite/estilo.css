@@ -1,16 +1,17 @@
 body {
 	margin: auto;
-	background-image:
-		URL(http://gamehall.uol.com.br/v10/wp-content/uploads/2015/06/ak07.jpg);
+	background-attachment: scroll;
 	background-attachment: fixed;
+	background-image: url("batman_arkham.jpg");
 }
+
 logo {
-	
 	background-image: url("#{resource['img1/hardline.jpg']}");
-	height:150px;
-	 width:1138px;
-	}
-rodape{
+	height: 150px;
+	width: 1138px;
+}
+
+rodape {
 	background-color: #400040;
 	margin: auto;
 	padding-left: 10px;
@@ -21,7 +22,7 @@ rodape{
 	height: 200px;
 	position: relative;
 	border-style: double;
-	border-radius:20px;
+	border-radius: 20px;
 	display: block;
 }
 /* div fundo branca*/
@@ -159,62 +160,6 @@ rodape{
 	display: block;
 	width: 120px;
 	height: 150px;
-}
-
-#jogos2 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos3 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos4 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos5 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos6 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos7 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
-}
-
-#jogos8 {
-	float: left;
-	display: block;
-	width: 140px;
-	height: 150px;
-	padding-left: 20px;
 }
 
 strike {
