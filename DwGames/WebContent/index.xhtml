@@ -1,26 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<h:head>
-	<!--  Latest compiled  and minified CSS -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-		
-	</script>
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-	<!-- Optional theme -->
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcnd.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
-	<!-- JavaScript Latest  compiled and minified JavaScript -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
-		
-	</script>
 
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link href="resources/cssSite/estilo.css" rel="stylesheet" />
 </h:head>
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
@@ -60,23 +49,58 @@
 
 				</div>
 			</div>
-			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-example-generic"
-				style="height: 400px;" role="button" data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#carousel-example-generic"
-				style="height: 400px;" role="button" data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
+			<div>
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic"
+					style="height: 400px;" role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#carousel-example-generic"
+					style="height: 400px;" role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
 		</div>
 		<br></br>
 		<div id="titDestaques">
 			<div class="titDestaques">DESTAQUES</div>
-			<br></br><br></br>
+			<br></br> <br></br>
+		</div>
+		<hr />
+		<div id="jogosEmDestaque">
+			<div class="row" style="width: 193%; margin-left: 0.5%;">
+				<ui:repeat value="#{produtoMB.produtos}" var="lista">
+					<div class="col-sm-6 col-md-1">
+						<div class="thumbnail">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<h:graphicImage rendered="#{not empty lista.foto}"
+										styleClass="img-responsive"
+										name="#{initParam['upload_path']}#{lista.foto}" />
+								</h3>
+							</div>
+							<div class="caption">
+								<b><h:outputText value="#{lista.nome}" /></b>
+								<p>
+									<h:outputText value="#{lista.descricao}" />
+									<br /> <b>R$: <h:outputText value="#{lista.valor}" /></b>
+
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</ui:repeat>
 			</div>
-			
+		</div>
+		<br/>
+		<div id="titLancamentos">
+			<div class="titDestaques">LANCAMENTOS</div>
+		</div>
+		<hr></hr>
+		
 	</ui:define>
 </ui:composition>
+
 </html>

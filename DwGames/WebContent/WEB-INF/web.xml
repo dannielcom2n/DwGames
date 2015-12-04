@@ -28,9 +28,28 @@
 	<listener>
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
 	</listener>
-	<!-- Parametros de upload -->  
- 	<context-param>  
-		<param-name>upload_path</param-name>  
-		<param-value>img/upload/</param-value>  
-	</context-param>  
+	<!-- Parametros de upload -->
+	<context-param>
+		<param-name>upload_path</param-name>
+		<param-value>img/upload/</param-value>
+	</context-param>
+	<context-param>
+		<param-name>servidor</param-name>
+		<param-value>localhost</param-value>
+	</context-param>
+	<context-param>
+		<param-name>banco</param-name>
+		<param-value>dwGames</param-value>
+	</context-param>
+	<context-param>
+		<param-name>usuario</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>senha</param-name>
+		<param-value></param-value>
+	</context-param>
+
+
+
 </web-app>

@@ -44,8 +44,12 @@ public class ClienteMB {
 		try {
 			cliente.getUser().setAdmin(false);
 			rn.salvar(cliente);
+<<<<<<< HEAD
 		} catch (Exception e) {
 			e.printStackTrace();
+=======
+		}	 catch (Exception e) {
+>>>>>>> branch 'master' of https://github.com/dannielcom2n/DwGames.git
 			return "";
 		}
 		return "/login";
@@ -65,7 +69,7 @@ public class ClienteMB {
 	public String editar(String idParam) {
 		Long id = Long.parseLong(idParam);
 		cliente = rn.buscarPorId(id);
-		return "clienteform";
+		return "/clienteform";
 	}
 
 }

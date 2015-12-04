@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
+			<h1>Compra</h1>
+
+			<h:link outcome="/compraform">Adicionar</h:link>
+			<h:form>
+				<table class="table table-listrado">
+					<h:dataTable border="1" value="#{compraMB.compras}" var="compras">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{compras.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Quantidade</f:facet>
+							<h:outputText value="#{compras.quantidade}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header"></f:facet>
+							<h:commandLink value="Editar"
+								action="#{compraMB.editar(compras.id)}" />
+							<h:commandLink value="X" action="#{compraMB.excluir(compras.id)}"
+								onclick="return confirm('Tem certeza que deseja excluir a compra &#34;#{compras.quantidade}&#34;?')" />
+						</h:column>
+					</h:dataTable>
+				</table>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

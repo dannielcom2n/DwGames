@@ -1,31 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
+
 	<ui:define name="conteudo">
-		<h1>Produtos</h1>
+		<div id="middle" class="without-left-column without-right-column"
+			style="min-height: 446px;">
+			<h1>Produtos</h1>
+			<div class="row" style="width: 193%; margin-left: 0.5%;">
+				<ui:repeat value="#{produtoMB.produtos}" var="lista">
+					<div class="col-sm-6 col-md-1">
+						<div class="thumbnail">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<h:graphicImage rendered="#{not empty lista.foto}"
+										styleClass="img-responsive"
+										name="#{initParam['upload_path']}#{lista.foto}" />
+								</h3>
+							</div>
+							<div class="caption">
+								<b><h:outputText value="#{lista.nome}" /></b>
+								<p>
+									<h:outputText value="#{lista.descricao}" />
+									<br /> <b>R$: <h:outputText value="#{lista.valor}" /></b>
 
-		<ui:repeat value="#{produtoMB.produtos}" var="lista">
+								</p>
 
-			<div class="panel panel-default" style="widht: 10px">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						<h:graphicImage rendered="#{not empty lista.foto}" styleClass="img-responsive"
-							name="#{initParam['upload_path']}#{lista.foto}" />
-					</h3>
-				</div>
-				<div class="panel-body">
-					<h:outputText value="#{lista.nome}" />
-					<p/>
-					<h:outputText value="#{lista.descricao}" />
-					<p/>
-					<h:outputText value="#{lista.valor}" />
-				</div>
+							</div>
+						</div>
+					</div>
+				</ui:repeat>
 			</div>
-		</ui:repeat>
+		</div>
 	</ui:define>
 </ui:composition>
 
