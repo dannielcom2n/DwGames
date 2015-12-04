@@ -47,10 +47,11 @@ public class ClienteMB {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "";
 
-		}	
-	
+		}
 		return "/login";
+
 	}
 
 	public String excluir(String idParam) {
