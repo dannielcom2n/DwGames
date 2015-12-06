@@ -52,12 +52,12 @@
 							<h:graphicImage rendered="#{not empty produtos.foto}" styleClass="img-responsive"
 							name="#{initParam['upload_path']}#{produtos.foto}" />
 						</h:column>
-						
 						<h:column>
 							<f:facet name="header"></f:facet>
 							<h:commandLink value="Editar"
 								action="#{produtoMB.editar(produtos.id)}" />
-
+						</h:column>
+						<h:column>
 							<h:commandLink value="X"
 								action="#{produtoMB.excluir(produtos.id)}"
 								onclick="return confirm('Tem certeza que deseja excluir o produto &#34;#{produtos.codigoDeBarras}&#34;?')" />

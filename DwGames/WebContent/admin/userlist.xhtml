@@ -32,6 +32,8 @@
 							<f:facet name="header"></f:facet>
 							<h:commandLink value="Editar"
 								action="#{userMB.editar(users.id)}" />
+						</h:column>	
+						<h:column>	
 							<h:commandLink value="X"
 								action="#{userMB.excluir(users.id)}"
 								onclick="return confirm('Tem certeza que deseja excluir o administrador &#34;#{users.nome}&#34;?')" />
