@@ -35,8 +35,8 @@ public class UserDao extends Dao {
 
 		PreparedStatement ps = getConnection().prepareStatement(UPDATE);
 		ps.setString(1, user.getNome());
-		ps.setString(2, user.getSenha());
-		ps.setString(3, user.getEmail());
+		ps.setString(2, user.getEmail());
+		ps.setString(3, user.getSenha());
 		ps.setLong(4, user.getId());
 
 		ps.executeUpdate();
