@@ -11,31 +11,33 @@
 				<h:form>
 					<h:panelGroup rendered="#{not empty clienteMB.cliente.id}">
 
-					
-					<h:inputHidden value="#{clienteMB.cliente.id}" />
-					<div>
-						<h:outputLabel value="Nome: " />
-						<h:inputText value="#{clienteMB.cliente.user.nome}" />
-					</div>
-					<div>
-						<h:outputLabel value="Telefone: " />
-						<h:inputText value="#{clienteMB.cliente.telefone}" />
-					</div>
-					<div>
-						<h:outputLabel value="Email: " />
-						<h:inputText value="#{clienteMB.cliente.user.email}" />
-					</div>
-					<div>
-						<h:outputLabel value="Senha: " />
-						<h:inputText value="#{clienteMB.cliente.user.senha}" />
-					</div>
-					<div>
-						<h:outputLabel value="Sexo: " />
-						<h:inputText value="#{clienteMB.cliente.sexo}" />
-					</div>
-					<button type="reset">Limpar</button>
 
-					<h:commandButton value="Salvar" action="#{clienteMB.salvar()}" />
+						<h:inputHidden value="#{clienteMB.cliente.id}" />
+						<div>
+							<h:outputLabel value="Nome: " />
+							<h:inputText value="#{clienteMB.cliente.user.nome}" />
+						</div>
+						<div>
+							<h:outputLabel value="Telefone: " />
+							<h:inputText value="#{clienteMB.cliente.telefone}" />
+						</div>
+						<div>
+							<h:outputLabel value="Email: " />
+							<h:inputText value="#{clienteMB.cliente.user.email}" />
+						</div>
+						<div>
+							<h:outputLabel value="Senha: " />
+							<h:inputSecret value="#{clienteMB.cliente.user.senha}" />
+						</div>
+						<div>
+							<h:selectOneRadio value="#{clienteMB.cliente.sexo}">
+								<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+								<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+							</h:selectOneRadio>
+						</div>
+						<button type="reset">Limpar</button>
+
+						<h:commandButton value="Salvar" action="#{clienteMB.salvar()}" />
 					</h:panelGroup>
 				</h:form>
 			</div>
