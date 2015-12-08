@@ -1,6 +1,9 @@
 package br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
+	private static final long serialVersionUID = -2888395855507609855L; 
 	private long id;
 	private int telefone;
 	private String sexo;

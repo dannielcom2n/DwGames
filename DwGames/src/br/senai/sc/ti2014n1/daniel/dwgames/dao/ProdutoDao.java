@@ -3,6 +3,7 @@ package br.senai.sc.ti2014n1.daniel.dwgames.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,18 +17,27 @@ public class ProdutoDao extends Dao {
 	private final String SELECT = "SELECT * FROM produto";
 	private final String SELECT_ID = "SELECT * FROM produto WHERE id = ?";
 
-	public void salvar(Produto produto) throws Exception {
-		if (produto.getId() == 0) {
-			inserir(produto);
-		} else {
-			alterar(produto);
+	public Produto salvar(Produto produto) throws Exception {
+		try {
+			if (produto.getId() != null && produto.getId() > 0) {
+				alterar(produto);
+			} else {
+				inserir(produto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new Exception("Erro ao salvar o produto");
 		}
+		return produto;
 
 	}
 
 	private void inserir(Produto produto) throws Exception {
+
 		try {
-			PreparedStatement ps = getConnection().prepareStatement(INSERT);
+
+			PreparedStatement ps = getConnection().prepareStatement(INSERT,
+					Statement.RETURN_GENERATED_KEYS);
 			ps.setInt(1, produto.getCodigoDeBarras());
 			ps.setString(2, produto.getNome());
 			ps.setDouble(3, produto.getValor());
@@ -35,12 +45,16 @@ public class ProdutoDao extends Dao {
 			ps.setInt(5, produto.getQuantidade());
 			ps.setString(6, produto.getDescricao());
 			ps.setString(7, produto.getFoto());
-			
-			ps.executeUpdate();
 
+			ps.executeUpdate();
+			ResultSet rs = ps.getGeneratedKeys();
+			if (rs.next()) {
+				Long novoId = rs.getLong(1);
+				produto.setId(novoId);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new Exception("Erro ao tentar cadastrar o produto");
+			System.out.println("Erro ao executar o insert do produto: " + e);
 		}
 	}
 
@@ -59,7 +73,7 @@ public class ProdutoDao extends Dao {
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Erro ao executar o update: " + e);
+			System.out.println("Erro ao executar o update: do produto" + e);
 		}
 
 	}

@@ -1,7 +1,10 @@
 package br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio;
 
-public class Produto {
-	private long id;
+import java.io.Serializable;
+
+public class Produto implements Serializable {
+	private static final long serialVersionUID = -2888395855507609855L;
+	private Long id;
 	private int codigoDeBarras;
 	private String nome;
 	private Double valor;
@@ -9,7 +12,6 @@ public class Produto {
 	private int quantidade;
 	private String descricao;
 	private String foto;
-	
 
 	public String getFoto() {
 		return foto;
@@ -19,11 +21,11 @@ public class Produto {
 		this.foto = foto;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

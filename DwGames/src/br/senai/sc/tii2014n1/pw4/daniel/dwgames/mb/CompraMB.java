@@ -4,8 +4,11 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+
 import br.senai.sc.ti2014n1.daniel.dwgames.model.CompraRn;
+import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Compra;
+import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Produto;
 
 @ManagedBean
 public class CompraMB {
@@ -17,6 +20,8 @@ public class CompraMB {
 	public void init() {
 		rn = new CompraRn();
 		compra = new Compra();
+		compra.setProduto(new Produto());
+		compra.setCliente(new Cliente());
 	}
 
 	public List<Compra> getCompras() {
@@ -40,8 +45,12 @@ public class CompraMB {
 
 	public String salvar() {
 		try {
+			compra.getProduto();
+			compra.getCliente();
 			rn.salvar(compra);
+
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "";
 		}
 		return "/index";

@@ -33,3 +33,16 @@ CREATE TABLE `user` (
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 )
+
+
+CREATE TABLE `compra` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quantidade` int(8) DEFAULT NULL,
+   `clienteid` int(11) NOT NULL,
+  `produtoid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_compra_produto_idx` (`produtoid`),
+  CONSTRAINT `fk_compra_produto` FOREIGN KEY (`produtoid`) REFERENCES `produto` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+   KEY `fk_compra_cliente_idx` (`clienteid`),
+   CONSTRAINT `fk_compra_cliente` FOREIGN KEY (`clienteid`) REFERENCES `cliente` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) 

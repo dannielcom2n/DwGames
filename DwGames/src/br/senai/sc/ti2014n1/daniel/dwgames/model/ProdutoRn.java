@@ -14,10 +14,8 @@ public class ProdutoRn {
 	}
 
 	public void salvar(Produto produto) throws Exception {
-		if (produto.getNome().trim().isEmpty()) {
-			throw new Exception("O nome é obrigatorio");
 
-		}
+		
 		dao.salvar(produto);
 	}
 
@@ -31,5 +29,13 @@ public class ProdutoRn {
 
 	public void excluir(Long id) throws Exception {
 		dao.excluir(id);
+	}
+
+	public boolean validar(Produto produto) throws Exception {
+		if (produto.getNome().trim().isEmpty()) {
+			throw new Exception("O nome é obrigatorio");
+
+		}
+		return true;
 	}
 }

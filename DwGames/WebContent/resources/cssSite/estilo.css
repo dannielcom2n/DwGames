@@ -11,20 +11,28 @@ logo {
 	width: 1138px;
 }
 
-rodape {
-	background-color: #400040;
+#rodape {
+	background-color: black;
 	margin: auto;
-	padding-left: 10px;
-	padding-right: 10px;
 	width: auto;
 	left: auto;
-	width: 1140px;
-	height: 200px;
+	height: 220px;
 	position: relative;
-	border-style: double;
-	border-radius: 20px;
 	display: block;
+	font-size: 1.125rem;
+    line-height: 1.33333;
+    color: #FFF;
+  
 }
+#imgRodape {
+	padding-left: 800px;
+	padding-top: 80px;
+}
+#imgRodape1 {
+	padding-left: 800px;
+	padding-top: 80px;
+}
+
 /* div fundo branca*/
 #middle {
 	position: relative;

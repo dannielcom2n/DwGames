@@ -3,6 +3,7 @@ package br.senai.sc.ti2014n1.daniel.dwgames.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class ClienteDao extends Dao {
 		userDao = new UserDao();
 	}
 
-	public void salvar(Cliente cliente) throws Exception {
+	public Cliente salvar(Cliente cliente) throws Exception {
 		try {
 			getConnection().setAutoCommit(false);
 			User user = userDao.salvar(cliente.getUser());
@@ -43,17 +44,25 @@ public class ClienteDao extends Dao {
 		} finally {
 			getConnection().setAutoCommit(true);
 		}
+		return cliente;
 	}
 
 	private void inserir(Cliente cliente) throws Exception {
 		try {
-			PreparedStatement ps = getConnection().prepareStatement(INSERT);
+			PreparedStatement ps = getConnection().prepareStatement(INSERT,
+					Statement.RETURN_GENERATED_KEYS);
 			ps.setInt(1, cliente.getTelefone());
 			ps.setString(2, cliente.getSexo());
 			ps.setLong(3, cliente.getUser().getId());
 			//ps.setLong(4, cliente.getId());
 
 			ps.executeUpdate();
+			ResultSet rs = ps.getGeneratedKeys();
+
+			if (rs.next()) {
+				Long novoId = rs.getLong(1);
+				cliente.setId(novoId);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,7 +81,7 @@ public class ClienteDao extends Dao {
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Erro ao executar o update: " + e);
+			System.out.println("Erro ao executar o update: do cliente" + e);
 		}
 
 	}
