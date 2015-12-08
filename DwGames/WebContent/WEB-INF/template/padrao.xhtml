@@ -50,10 +50,11 @@
 										rendered="#{!sessaoMB.estaLogado()}">Login</h:link></li>
 
 								<li><h:link outcome="/produtos">Produtos</h:link></li>
-								<li><h:link outcome="/clienteform">Cadastre-se</h:link></li>
+								<li><h:link outcome="/clienteform"
+										rendered="#{!sessaoMB.estaLogado()}">Cadastre-se</h:link></li>
 
 							</ul>
-							<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
+							<h:panelGroup rendered="#{sessaoMB.estaLogadoAdimin()}">
 								<h:form>
 									<ul class="nav navbar-nav navbar-right">
 										<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -75,6 +76,20 @@
 									</ul>
 								</h:form>
 							</h:panelGroup>
+							<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
+								<h:form>
+									<ul class="nav navbar-nav navbar-right">
+										<li class="dropdown"><a href="#" class="dropdown-toggle"
+											data-toggle="dropdown" role="button" aria-haspopup="true"
+											aria-expanded="false">Perfil <span class="caret"></span></a>
+											<ul class="dropdown-menu">
+
+												<li><h:commandLink action="#{sessaoMB.sair()}">Sair</h:commandLink></li>
+											</ul></li>
+									</ul>
+								</h:form>
+							</h:panelGroup>
+
 
 						</div>
 						<!-- /.navbar-collapse -->

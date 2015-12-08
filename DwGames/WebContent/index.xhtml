@@ -99,6 +99,32 @@
 			<div class="titDestaques">LANCAMENTOS</div>
 		</div>
 		<hr></hr>
+		<div id="jogosEmDestaque">
+			<div class="row" style="width: 193%; margin-left: 0.5%;">
+				<ui:repeat value="#{produtoMB.produtos}" var="lista">
+					<div class="col-sm-6 col-md-1">
+						<div class="thumbnail">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<h:graphicImage rendered="#{not empty lista.foto}"
+										styleClass="img-responsive"
+										name="#{initParam['upload_path']}#{lista.foto}" />
+								</h3>
+							</div>
+							<div class="caption">
+								<b><h:outputText value="#{lista.nome}" /></b>
+								<p>
+									<h:outputText value="#{lista.descricao}" />
+									<br /> <b>R$: <h:outputText value="#{lista.valor}" /></b>
+
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</ui:repeat>
+			</div>
+		</div>
 
 	</ui:define>
 </ui:composition>
