@@ -26,11 +26,28 @@
 							<f:selectItem itemLabel="5" itemValue="5" />
 							<f:selectItem itemLabel="6" itemValue="6" />
 							<f:selectItem itemLabel="7" itemValue="7" />
-							<f:selectItem itemLabel="7" itemValue="8" />
 
 						</h:selectOneMenu>
 					</div>
-					
+					<div>
+						<h:outputLabel value="compra:" for="idCompra" />
+						<h:selectOneMenu id="idCompra"
+							value="#{compraMB.compra.produto.id}">
+							<f:selectItems value="#{produtoMB.produtos}" var="produto"
+								itemLabel="#{produto.nome}-R$ #{produto.valor}"
+								itemValue="#{produto.id}" />
+						</h:selectOneMenu>
+					</div>
+					<div>
+
+						<h:outputLabel value="Cliente:" for="idCliente"/>
+						<h:selectOneMenu id="idCliente"
+							value="#{compraMB.compra.cliente.id}">
+							<f:selectItems value="#{clienteMB.clientes}" var="cliente"
+								itemLabel="#{cliente.user.nome}" itemValue="#{cliente.id}" />
+
+						</h:selectOneMenu>
+					</div>
 					<button type="reset">Limpar</button>
 
 					<h:commandButton value="Salvar" action="#{compraMB.salvar()}" />

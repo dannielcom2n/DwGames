@@ -8,7 +8,7 @@ public class User implements Serializable{
 	private String nome;
 	private String email;
 	private String senha;
-	private boolean admin;
+	private Boolean admin;
 
 	public Long getId() {
 		return id;
@@ -42,11 +42,11 @@ public class User implements Serializable{
 		this.senha = senha;
 	}
 
-	public boolean getAdmin() {
+	public Boolean getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(boolean admin) {
+	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
 
