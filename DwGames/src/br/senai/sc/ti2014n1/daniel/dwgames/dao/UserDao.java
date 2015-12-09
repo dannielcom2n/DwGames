@@ -11,8 +11,8 @@ import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.User;
 public class UserDao extends Dao {
 
 	private final String SELECT_EMAIL = "SELECT * FROM user WHERE email = ?";
-	private final String INSERT = "INSERT INTO user (nome, email, senha) values (?,?,?)";
-	private final String UPDATE = "UPDATE user SET nome = ?,  email = ?, senha = ? WHERE id = ?";
+	private final String INSERT = "INSERT INTO user (nome, email, senha, admin) values (?,?,?,?)";
+	private final String UPDATE = "UPDATE user SET nome = ?,  email = ?, senha = ?, admin = ? WHERE id = ?";
 	private final String SELECT_ID = "SELECT * FROM user WHERE id = ?";
 	private final String DELETE = "DELETE FROM user WHERE id = ?";
 	private final String SELECT = "SELECT * FROM user";
@@ -37,7 +37,8 @@ public class UserDao extends Dao {
 		ps.setString(1, user.getNome());
 		ps.setString(2, user.getEmail());
 		ps.setString(3, user.getSenha());
-		ps.setLong(4, user.getId());
+		ps.setBoolean(4, user.getAdmin());
+		ps.setLong(5, user.getId());
 
 		ps.executeUpdate();
 
@@ -50,6 +51,7 @@ public class UserDao extends Dao {
 		ps.setString(1, user.getNome());
 		ps.setString(2, user.getEmail());
 		ps.setString(3, user.getSenha());
+		ps.setBoolean(4, user.getAdmin());
 		ps.executeUpdate();
 
 		ResultSet rs = ps.getGeneratedKeys();

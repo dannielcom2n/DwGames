@@ -44,13 +44,7 @@ public class UserRn {
 			throw new Exception("A senha é obrigatoria");
 
 		}
-
-		if (user.getAdmin() == null) {
-			user.setAdmin(false);
-		} else {
-			user.setAdmin(true);
-		}
-
+		
 		return true;
 
 	}
