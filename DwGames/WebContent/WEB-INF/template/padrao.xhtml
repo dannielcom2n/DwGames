@@ -6,12 +6,13 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<link href="resources/cssSite/estilo.css" rel="stylesheet" />
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 
 	<title><ui:insert name="titulo">DW Games</ui:insert></title>
+	<h:outputStylesheet library="cssSite" name="estilo.css" />
 	<!-- 	<h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css" /> -->
 	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
 	<h:outputStylesheet library="css" name="padrao.css" />
@@ -24,8 +25,9 @@
 
 			<br></br>
 			<div class="logo">
-				<img src="#{resource['imgLogo/hardline.jpg']}"
-					style="height: 150px; width: 1138px;" />
+			<img src="#{resource['cssSite/hardline.jpg']}" style="height: 150px;
+	width: 1138px;" />
+
 				<div class="menu">
 					<nav class="navbar navbar-default"
 						style="background-color:black;border-color:black">
@@ -104,14 +106,14 @@
 	</div>
 
 	<div id="rodape">
-		<div id="imgRodape">
+		
 			<h3 class="foot-title">Formas de pagamento</h3>
-			<img src="resources/cssSite/FormasDePagamento.png" height="38"
-				width="458" />
-		</div>
+			
+	
 
 
-		<div class="rodape" style="position: center;">&copy;   Todos os direitos reservados &reg;</div>
+		<div class="rodape" style="position: center;">&copy; Todos os
+			direitos reservados &reg;</div>
 	</div>
 
 	<h:outputScript library="js" name="jquery.min.js" />

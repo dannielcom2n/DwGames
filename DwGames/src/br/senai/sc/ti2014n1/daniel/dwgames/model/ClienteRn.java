@@ -3,6 +3,7 @@ package br.senai.sc.ti2014n1.daniel.dwgames.model;
 import java.util.List;
 
 import br.senai.sc.ti2014n1.daniel.dwgames.dao.ClienteDao;
+
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
 
 public class ClienteRn {
@@ -47,4 +48,6 @@ public class ClienteRn {
 	public void excluir(Long id) throws Exception {
 		dao.excluir(id);
 	}
+
+	// compra.setCliente(id);
 }

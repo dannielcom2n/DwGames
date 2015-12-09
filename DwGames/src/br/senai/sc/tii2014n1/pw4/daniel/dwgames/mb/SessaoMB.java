@@ -53,5 +53,7 @@ public class SessaoMB {
 		usuarioLogado = null;
 		return "/index?faces-redirect=true";
 	}
+	
+	
 
 }

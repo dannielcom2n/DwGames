@@ -30,11 +30,14 @@ public class CompraRn {
 		return dao.listarTodos();
 	}
 
-	public Compra buscarPorId(Long id) {
-		return dao.buscarPorId(id);
-	}
+
 
 	public void excluir(Long id) throws Exception {
 		dao.excluir(id);
+	}
+
+	public Compra buscarPorId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

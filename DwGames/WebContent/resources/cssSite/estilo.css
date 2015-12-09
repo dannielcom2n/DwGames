@@ -2,11 +2,11 @@ body {
 	margin: auto;
 	background-attachment: scroll;
 	background-attachment: fixed;
-	background-image: url("batman_arkham.jpg");
+	background-image: url("#{resource['cssSite/batman_arkham.jpg']}");
 }
 
-logo {
-	background-image: url("#{resource['img1/hardline.jpg']}");
+#logo {
+	background-image: url("#{resource['cssSite/hardline.jpg']}");
 	height: 150px;
 	width: 1138px;
 }
@@ -20,17 +20,14 @@ logo {
 	position: relative;
 	display: block;
 	font-size: 1.125rem;
-    line-height: 1.33333;
-    color: #FFF;
-  
+	line-height: 1.33333;
+	color: #FFF;
+	
+	
 }
+
 #imgRodape {
-	padding-left: 800px;
-	padding-top: 80px;
-}
-#imgRodape1 {
-	padding-left: 800px;
-	padding-top: 80px;
+	
 }
 
 /* div fundo branca*/
