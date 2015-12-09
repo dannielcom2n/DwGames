@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 
 import br.senai.sc.ti2014n1.daniel.dwgames.model.CompraRn;
 import br.senai.sc.tii20141n1.pw4.daniel.dwgames.model.dominio.Cliente;
@@ -15,6 +16,9 @@ public class CompraMB {
 	private List<Compra> compras;
 	private Compra compra;
 	private CompraRn rn;
+
+	@ManagedProperty(value = "#{sessaoMB}")
+	private SessaoMB sessaoMB;
 
 	@PostConstruct
 	public void init() {
@@ -43,8 +47,17 @@ public class CompraMB {
 		this.compra = compra;
 	}
 
+	public SessaoMB getSessaoMB() {
+		return sessaoMB;
+	}
+
+	public void setSessaoMB(SessaoMB sessaoMB) {
+		this.sessaoMB = sessaoMB;
+	}
+
 	public String salvar() {
 		try {
+			System.out.println("Usuário Logado: " + sessaoMB.getNomeUsuarioLogado());
 			compra.getProduto();
 			compra.getCliente();
 			rn.salvar(compra);

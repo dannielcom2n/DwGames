@@ -44,16 +44,21 @@ public class SessaoMB {
 	public Boolean estaLogado() {
 		return usuarioLogado != null;
 	}
-	
+
 	public Boolean estaLogadoAdimin() {
 		return usuarioLogado != null && usuarioLogado.getAdmin();
+	}
+
+	public String getNomeUsuarioLogado() {
+		if (usuarioLogado != null) {
+			return usuarioLogado.getNome();
+		}
+		return null;
 	}
 
 	public String sair() {
 		usuarioLogado = null;
 		return "/index?faces-redirect=true";
 	}
-	
-	
 
 }
